@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickDeleteButtonEvent(View view) {
         if (currentIndex != OUT_OF_BOUND_INDEX) {
-            PersonDaoStatic.delete(currentIndex);
+            personDao.delete(currentIndex);
             setEditTextPersonFields(EMPTY_FIELD, EMPTY_FIELD);
             makeText(this,
                     "person successfully deleted",

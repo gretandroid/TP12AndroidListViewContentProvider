@@ -27,8 +27,8 @@ public class PersonDaoStatic implements IPersonDao {
         return persons.set(index, person);
     }
 
-    public static void delete(int index) {
-        persons.remove(index);
+    public void delete(int id) {
+        persons.remove(id);
     }
 
     public List<Person> findAll() {

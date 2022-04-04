@@ -17,4 +17,6 @@ public interface IPersonDao {
     long count();
 
     Person save(int currentIndex, Person person);
+
+    void delete(int id);
 }
