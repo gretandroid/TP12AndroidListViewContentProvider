@@ -58,7 +58,8 @@ public class SecondActivity extends AppCompatActivity {
 
     public void onClickBackButtonEvent(View view) {
         setResult(RESULT_CANCELED, new Intent()
-                .putExtra(CURRENT_PERSON_INDEX_KEY, OUT_OF_BOUND_INDEX));
+                .putExtra(CURRENT_PERSON_INDEX_KEY,
+                        OUT_OF_BOUND_INDEX));
         finish();
     }
 }

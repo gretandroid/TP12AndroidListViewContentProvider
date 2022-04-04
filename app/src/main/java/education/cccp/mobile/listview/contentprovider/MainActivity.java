@@ -94,7 +94,6 @@ public class MainActivity extends AppCompatActivity {
                             currentIndex = Objects.requireNonNull(data).getIntExtra(
                                     CURRENT_PERSON_INDEX_KEY,
                                     OUT_OF_BOUND_INDEX);
-
                         }
                     }
                 }
@@ -122,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickDeleteButtonEvent(View view) {
         if (currentIndex != OUT_OF_BOUND_INDEX) {
-            personDao.delete(currentIndex);
+            personDao.deleteById(currentIndex);
             setEditTextPersonFields(EMPTY_FIELD, EMPTY_FIELD);
             makeText(this,
                     "person successfully deleted",
