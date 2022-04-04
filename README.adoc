@@ -1,12 +1,7 @@
-= TP11 Android ListView
+= TP12 Android ListView ContentProvider
 
-=== branch one_button_save
-version avec un bouton.
 
-=== exo sur la branche master
-utiliser 3 bouton en partant de la version un bouton
-tel que le screen suivant: +
- +
+
 MainActivity +
 image:img/Screenshot_20220402-124702.png[MainActivity,width=340,height=580]
  +

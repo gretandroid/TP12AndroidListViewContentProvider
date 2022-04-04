@@ -6,6 +6,8 @@ import education.cccp.mobile.listview.contentprovider.models.Person;
 
 @SuppressWarnings("UnusedReturnValue")
 public interface IPersonDao {
+    int PERSON_ID_DEFAULT_VALUE = -1;
+
     Person save(Person person) throws Exception;
 
     List<Person> findAll();
@@ -15,6 +17,4 @@ public interface IPersonDao {
     long count();
 
     Person save(int currentIndex, Person person);
-
-    int PERSON_ID_DEFAULT_VALUE = -1;
 }

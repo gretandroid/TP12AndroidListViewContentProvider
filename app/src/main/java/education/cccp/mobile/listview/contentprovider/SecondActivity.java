@@ -1,14 +1,11 @@
 package education.cccp.mobile.listview.contentprovider;
 
 import static android.R.layout.simple_list_item_1;
-import static android.app.Activity.RESULT_CANCELED;
 import static education.cccp.mobile.listview.contentprovider.R.id.personListViewId;
 import static education.cccp.mobile.listview.contentprovider.R.layout.activity_second;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -30,7 +27,7 @@ public class SecondActivity extends AppCompatActivity {
     public static final String PERSON_LIST_KEY = "person_list_key";
     public static final int OUT_OF_BOUND_INDEX = -1;
 
-    private final IPersonDao personDao=new PersonDaoStatic();
+    private final IPersonDao personDao = new PersonDaoStatic();
 
 
     @Override
@@ -60,7 +57,7 @@ public class SecondActivity extends AppCompatActivity {
     }
 
     public void onClickBackButtonEvent(View view) {
-        setResult(RESULT_CANCELED,new Intent()
+        setResult(RESULT_CANCELED, new Intent()
                 .putExtra(CURRENT_PERSON_INDEX_KEY, OUT_OF_BOUND_INDEX));
         finish();
     }
