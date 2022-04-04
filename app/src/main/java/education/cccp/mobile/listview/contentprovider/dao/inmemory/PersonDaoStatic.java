@@ -1,10 +1,11 @@
-package education.cccp.mobile.listview.contentprovider.dao;
+package education.cccp.mobile.listview.contentprovider.dao.inmemory;
 
 import androidx.annotation.NonNull;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import education.cccp.mobile.listview.contentprovider.dao.IPersonDao;
 import education.cccp.mobile.listview.contentprovider.models.Person;
 
 public class PersonDaoStatic implements IPersonDao {

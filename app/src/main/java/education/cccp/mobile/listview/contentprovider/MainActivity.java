@@ -23,7 +23,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 import education.cccp.mobile.listview.contentprovider.dao.IPersonDao;
-import education.cccp.mobile.listview.contentprovider.dao.PersonDaoStatic;
+import education.cccp.mobile.listview.contentprovider.dao.inmemory.PersonDaoStatic;
 import education.cccp.mobile.listview.contentprovider.models.Person;
 
 public class MainActivity extends AppCompatActivity {

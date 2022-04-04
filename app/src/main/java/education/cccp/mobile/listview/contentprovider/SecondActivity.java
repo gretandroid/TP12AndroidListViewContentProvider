@@ -17,7 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.List;
 
 import education.cccp.mobile.listview.contentprovider.dao.IPersonDao;
-import education.cccp.mobile.listview.contentprovider.dao.PersonDaoStatic;
+import education.cccp.mobile.listview.contentprovider.dao.inmemory.PersonDaoStatic;
 import education.cccp.mobile.listview.contentprovider.models.Person;
 
 public class SecondActivity extends AppCompatActivity {
