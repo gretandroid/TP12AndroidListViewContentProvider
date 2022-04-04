@@ -6,7 +6,11 @@ import java.util.List;
 import education.cccp.mobile.listview.contentprovider.models.Person;
 
 public class PersonDaoStatic implements IPersonDao {
-
+/*
+TODO: synchroniser id et index, apres ajout et remove
+dans le but de se debarrarsser de la methode delete(int, Person)
+pour passer a deleteById(int) et delete(Person)
+ */
     private static int counter = 0;
 
     public static int idGenerator() {
