@@ -1,4 +1,4 @@
-package education.cccp.tp11listview.models;
+package education.cccp.mobile.listview.contentprovider.models;
 
 import androidx.annotation.NonNull;
 
@@ -6,19 +6,26 @@ import java.io.Serializable;
 
 public class Person implements Serializable {
     private static final long serialVersionUID = 1L;
-
     private Integer id;
     private String firstName;
     private String lastName;
 
     public Person(
-            Integer id,
             String firstName,
             String lastName) {
-        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
     }
+
+    public Person(
+            Integer id,
+            String firstName,
+            String lastName) {
+        this(firstName,lastName);
+        this.id = id;
+    }
+
+
 
     @NonNull
     @Override
@@ -34,10 +41,6 @@ public class Person implements Serializable {
 
     public Integer getId() {
         return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getFirstName() {
