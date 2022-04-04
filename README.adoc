@@ -1,6 +1,14 @@
 = TP12 Android ListView ContentProvider
 
+== Deux branches
 
+=== static_dao
+la collection(ArrayAdapter) de la ListView est géré par une collection static. +
+La collection static est l'implementation d'une interface DAO.
+
+=== master: ContentProvider
+La collection de la ListView est implémenté dans un DAO. +
+l'implémentation utilise SQLite dans l'implementation de son DAO.
 
 MainActivity +
 image:img/Screenshot_20220402-124702.png[MainActivity,width=340,height=580]
