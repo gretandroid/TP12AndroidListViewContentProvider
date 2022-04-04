@@ -2,7 +2,7 @@
 
 == Deux branches
 
-=== static_dao
+=== dao_static_impl
 la collection(ArrayAdapter) de la ListView est géré par une collection static. +
 La collection static est l'implementation d'une interface DAO.
 
