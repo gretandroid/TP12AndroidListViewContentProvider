@@ -5,6 +5,20 @@ import androidx.annotation.NonNull;
 import java.io.Serializable;
 
 public class Person implements Serializable {
+
+    public static final String TABLE_PERSON = "table_person";
+    public static final String TABLE_PERSON_COL_ID = "ID";
+    public static final String TABLE_PERSON_COL_FIRST_NAME = "FIRST_NAME";
+    public static final String TABLE_PERSON_COL_LAST_NAME = "LAST_NAME";
+
+    public static final String CREATE_TABLE_PERSON = "CREATE TABLE " +
+            TABLE_PERSON + " (" +
+            TABLE_PERSON_COL_ID +
+            " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            TABLE_PERSON_COL_FIRST_NAME + " TEXT NOT NULL, " +
+            TABLE_PERSON_COL_LAST_NAME + " TEXT NOT NULL);";
+
+
     private static final long serialVersionUID = 1L;
     private Integer id;
     private String firstName;

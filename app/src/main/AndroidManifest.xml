@@ -21,6 +21,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <provider
+            android:name=".dao.sqlite.PersonDaoSQLite"
+            android:authorities=
+                "education.cccp.mobile.listview.contentprovider.dao.sqlite.PersonDaoSQLite"
+            android:exported="true" />
     </application>
 
 </manifest>

@@ -23,7 +23,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 import education.cccp.mobile.listview.contentprovider.dao.IPersonDao;
-import education.cccp.mobile.listview.contentprovider.dao.PersonDaoStatic;
+import education.cccp.mobile.listview.contentprovider.dao.inmemory.PersonDaoStatic;
 import education.cccp.mobile.listview.contentprovider.models.Person;
 
 public class MainActivity extends AppCompatActivity {
@@ -46,6 +46,26 @@ public class MainActivity extends AppCompatActivity {
         personLastNameEditText.setText(lastName);
     }
 
+    private void makeTextPersonsIsEmptyOrNoOneSelected() {
+        makeText(
+                this,
+                "person list is empty or no person selected",
+                LENGTH_SHORT
+        ).show();
+    }
+
+
+    private void gotoSecondActivity() {
+        intentActivityResultLauncher.launch(
+                new Intent(
+                        this,
+                        SecondActivity.class
+                ).putExtra(
+                        PERSONS_KEY,
+                        (Serializable) personDao.findAll()
+                )
+        );
+    }
 
     @Override
     @SuppressWarnings("Convert2Lambda")
@@ -69,20 +89,18 @@ public class MainActivity extends AppCompatActivity {
                                     CURRENT_PERSON_INDEX_KEY,
                                     OUT_OF_BOUND_INDEX);
                         }
-                        if(activityResult.getResultCode()==RESULT_CANCELED){
-                            setEditTextPersonFields(EMPTY_FIELD,EMPTY_FIELD);
+                        if (activityResult.getResultCode() == RESULT_CANCELED) {
+                            setEditTextPersonFields(EMPTY_FIELD, EMPTY_FIELD);
                             currentIndex = Objects.requireNonNull(data).getIntExtra(
                                     CURRENT_PERSON_INDEX_KEY,
                                     OUT_OF_BOUND_INDEX);
-
                         }
                     }
                 }
         );
     }
 
-    public void onClickCreateButtonEvent(View view)
-            throws Exception {
+    public void onClickCreateButtonEvent(View view) throws Exception {
         personDao.save(new Person(
                 personFirstNameEditText.getText().toString(),
                 personLastNameEditText.getText().toString()));
@@ -103,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickDeleteButtonEvent(View view) {
         if (currentIndex != OUT_OF_BOUND_INDEX) {
-            PersonDaoStatic.delete(currentIndex);
+            personDao.deleteById(currentIndex);
             setEditTextPersonFields(EMPTY_FIELD, EMPTY_FIELD);
             makeText(this,
                     "person successfully deleted",
@@ -123,26 +141,5 @@ public class MainActivity extends AppCompatActivity {
                     LENGTH_SHORT).show();
             gotoSecondActivity();
         } else makeTextPersonsIsEmptyOrNoOneSelected();
-    }
-
-    private void makeTextPersonsIsEmptyOrNoOneSelected() {
-        makeText(
-                this,
-                "person list is empty or no person selected",
-                LENGTH_SHORT
-        ).show();
-    }
-
-
-    private void gotoSecondActivity() {
-        intentActivityResultLauncher.launch(
-                new Intent(
-                        this,
-                        SecondActivity.class
-                ).putExtra(
-                        PERSONS_KEY,
-                        (Serializable) personDao.findAll()
-                )
-        );
     }
 }
